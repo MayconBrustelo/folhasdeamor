@@ -19,7 +19,7 @@ df = df.drop(columns=["VL_LUCRO"])
 df = df.drop(columns=["VL_UNIT"])
 df = df.drop(columns=["VL_VEND_TOT"])
 df = df.drop(columns=["Vendeu"])
-#df = df.drop(columns=["DT_VENDA"])
+df = df.drop(columns=["DT_VENDA"])
 df = df.drop(columns=["QTD_VEND"])
 
 #display(df.head())
@@ -29,4 +29,6 @@ df = df.sort_values("Descrição")
 Grupo = st.sidebar.selectbox("Grupo", df["Grupo"].unique())
 
 df_filtered = df[df["Grupo"] == Grupo]
+
+df_filtered = df_filtered.drop(columns=["Grupo"])
 df_filtered
